@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8pythonweb-app
+  labels:
+    app: k8pythonwebapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: k8pythonwebapp
+  template:
+    metadata:
+      labels:
+        app: k8pythonwebapp
+    spec:
+      containers:
+      - name: k8pythonwebapp
+        image: k8pythonwebapp:2.0
+        ports:
+        - containerPort: 5000

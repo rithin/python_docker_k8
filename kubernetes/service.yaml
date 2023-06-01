@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: k8pythonwebappsvc
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 5000
+      protocol: TCP
+      nodePort: 30009
+  selector:
+    app: k8pythonwebapp   
